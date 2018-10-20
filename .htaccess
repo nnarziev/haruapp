@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteBase /
+	RewriteCond $1 !^(index\.php|adm|application|assets|controllers|views|mobile_views|models|data|plugins|robots\.txt)
+	#RewriteCond %{REQUEST_FILENAME} !-f
+	#RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|js|css)
+	RewriteRule ^(.*)$ /index.php/$1 [L]
+</IfModule>
